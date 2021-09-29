@@ -35,22 +35,21 @@ public class ServletGestionusuario extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		JOptionPane.showMessageDialog(null, "servlet");
+		//Consulta general
+		PrintWriter out = response.getWriter();
+		UsuarioDTO us;
 		UsuarioDAO usc;
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		ArrayList<UsuarioDTO>lista=new ArrayList<UsuarioDTO>();
-		usc=new UsuarioDAO();
-		lista=usc.consultar();
-		JOptionPane.showMessageDialog(null,lista.size());
-		JOptionPane.showMessageDialog(null, "antes de gson");
-		//PrintWriter pw= response.getWriter();
-		//pw.print(lista);
-		Gson gson=new  Gson();
-        PrintWriter pw= response.getWriter();
-        pw.println(gson.toJson(lista));
-        JOptionPane.showMessageDialog(null, "despuesss");
-	
+				String dato=request.getParameter("dat");
+				JOptionPane.showMessageDialog(null, dato);
+				
+					 
+				JOptionPane.showMessageDialog(null, "en el tabla");
+				ArrayList<UsuarioDTO>lista=new ArrayList<UsuarioDTO>();
+				usc=new UsuarioDAO();
+				lista=usc.consultar();
+				
+				Gson gsonn=new Gson();
+				out.println(gsonn.toJson(lista));
 	    
 	}
 
@@ -59,7 +58,7 @@ public class ServletGestionusuario extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+		PrintWriter out = response.getWriter();
         JOptionPane.showMessageDialog(null, "servlet");
 		String u,c,r,e;
 		int d;
@@ -163,7 +162,7 @@ public class ServletGestionusuario extends HttpServlet {
 		}
 		
 		
-	    JOptionPane.showMessageDialog(null, "select");
+	   
 		   ArrayList< UsuarioDTO>list=new ArrayList<UsuarioDTO>();
 		    usc=new UsuarioDAO();
 		    list=usc.consultardocumento();
@@ -171,6 +170,9 @@ public class ServletGestionusuario extends HttpServlet {
 		   // JOptionPane.showMessageDialog(null,list.size() );
 		    out.println(gson.toJson(list));
 	       
+		    
+		    
+		    
 		//Consulta general
 		
 		/*String dato=request.getParameter("dat");

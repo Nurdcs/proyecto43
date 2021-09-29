@@ -16,8 +16,8 @@
 
 
 <%
-//Conexion con=new Conexion();
-//con.conexionbd();
+Conexion con=new Conexion();
+con.conexionbd();
 
 String u="",c="",r="",e="",d="";
 

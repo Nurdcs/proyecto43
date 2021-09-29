@@ -15,8 +15,8 @@ public class Conexion {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			try {
-				cnn=DriverManager.getConnection("jdbc:mysql://localhost/bancog10","root","");
-				JOptionPane.showMessageDialog(null,"conexiommn lllllok");
+				cnn=DriverManager.getConnection("jdbc:mysql://localhost/banco32","root","");
+				JOptionPane.showMessageDialog(null,"conexiommn ok");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

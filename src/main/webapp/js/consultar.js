@@ -3,12 +3,12 @@ $(document).ready(function(){
  function consultarusuarios(){
 	alert("en la funcion");	
 	//let consultar;
-	
+	ced=document.getElementById();
 $.ajax({
-  type:"post",
+  type:"get",
   url: "ServletGestionusuario",
   dataType:'json',
-  data:{dat:"consultar"
+  data:{dat:ced;
 	
     },
   success: function(result){
@@ -56,29 +56,10 @@ $.ajax({
       
      for(let i of result ){
 	   datos.innerHTML+=`<option>${i.documneto}</option>`; 
-                             
-
-      
-     }
-
+      }
   }
 });
-	
-	
-	
-	
 }
-
-
-
-
-
-
-
-
-
-
-
 $('.con').on('click',function(){
 	consultarusuarios();
 });	
